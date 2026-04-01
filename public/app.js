@@ -46,43 +46,52 @@ const mockRooms = [
 
 const mockMenu = [
     // Starters
-    { id: 1, name: 'Galouti Kebab', price: 450, description: 'Melt-in-mouth lamb patties infused with royal spices.', category: 'Starters', image_url: 'images/menu_galouti.png' },
-    { id: 2, name: 'Butter Chicken Samosa', price: 250, description: 'Crispy pastry pillows stuffed with shredded butter chicken.', category: 'Starters', image_url: 'images/menu_samosa.png' },
-    { id: 3, name: 'Paneer Tikka', price: 300, description: 'Charcoal-grilled cottage cheese marinated in hung curd.', category: 'Starters', image_url: 'images/menu_paneer_tikka.png' },
-    { id: 4, name: 'Tandoori Jhinga', price: 650, description: 'Tiger prawns marinated with Kashmiri saffron, cooked in a clay oven.', category: 'Starters', image_url: 'images/menu_jhinga.png' },
-    { id: 5, name: 'Dahi Puri', price: 200, description: 'Crispy semolina shells filled with spiced potatoes and sweet yogurt.', category: 'Starters', image_url: 'images/menu_dahi_puri.png' },
-    { id: 6, name: 'Murg Malai Tikka', price: 350, description: 'Tender chicken marinated in fresh cream, mild spices, and cardamom.', category: 'Starters', image_url: 'images/menu_murg_malai.png' },
-    
+    { id: 1, name: 'Gold-Leaf Galouti Kebab', price: 2500, description: 'Melt-in-mouth lamb patties infused with 16 royal spices.', category: 'Starters', image_url: 'images/menu_galouti.png' },
+    { id: 2, name: 'Truffle Butter Chicken Samosa', price: 1800, description: 'Crispy pastry pillows stuffed with shredded butter chicken and Italian black truffle shavings.', category: 'Starters', image_url: 'images/menu_samosa.png' },
+    { id: 3, name: 'Peshawari Paneer Tikka', price: 1500, description: 'Charcoal-grilled cottage cheese marinated in hung curd.', category: 'Starters', image_url: 'images/menu_paneer_tikka.png' },
+    { id: 4, name: 'Saffron Tandoori Jhinga', price: 3200, description: 'Tiger prawns marinated with wild Kashmiri saffron.', category: 'Starters', image_url: 'images/menu_jhinga.png' },
+    { id: 5, name: 'Dahi Puri Caviar', price: 2800, description: 'Crispy semolina shells filled with spiced potatoes, sweet yogurt, topped with Beluga caviar.', category: 'Starters', image_url: 'images/menu_dahi_puri.png' },
+    { id: 6, name: 'Murg Malai Tikka', price: 1600, description: 'Tender chicken marinated in fresh cream and mild spices.', category: 'Starters', image_url: 'images/menu_murg_malai.png' },
+    { id: 7, name: 'Avocado Papdi Chaat', price: 1400, description: 'A modern twist on a classic, featuring mashed avocado.', category: 'Starters', image_url: 'images/menu_avocado_chaat.png' },
+    { id: 8, name: 'Lobster Shorba', price: 2100, description: 'A fragrant, slow-simmered seafood broth.', category: 'Starters', image_url: 'images/menu_lobster_shorba.png' },
+
     // Mains Veg
-    { id: 7, name: 'Dal Makhani', price: 280, description: 'Black lentils simmered overnight on a slow charcoal fire, finished with cream.', category: 'Mains (Vegetarian)', image_url: 'images/menu_dal_bukhara.png' },
-    { id: 8, name: 'Mushroom Pulav', price: 320, description: 'Aromatic basmati rice steamed with wild mushrooms.', category: 'Mains (Vegetarian)', image_url: 'images/menu_morel_pulav.png' },
-    { id: 9, name: 'Paneer Butter Masala', price: 380, description: 'Cottage cheese cubes tossed in a rich, creamy tomato gravy.', category: 'Mains (Vegetarian)', image_url: 'images/menu_paneer_tikka.png' },
-    { id: 10, name: 'Malai Kofta', price: 350, description: 'Cottage cheese and potato dumplings in a velvety, cashew-enriched white gravy.', category: 'Mains (Vegetarian)', image_url: 'images/menu_dal_bukhara.png' },
-    { id: 11, name: 'Kashmiri Dum Aloo', price: 300, description: 'Baby potatoes slow-cooked in a vibrant, spiced yogurt gravy native to the Kashmir valley.', category: 'Mains (Vegetarian)', image_url: 'images/menu_dal_bukhara.png' },
-    { id: 12, name: 'Pindi Chole', price: 250, description: 'Robust and spicy chickpeas cooked dry with Punjabi spices.', category: 'Mains (Vegetarian)', image_url: 'images/menu_dal_bukhara.png' },
-    
+    { id: 9, name: 'Dal Bukhara', price: 1800, description: 'Black lentils simmered overnight on a slow charcoal fire.', category: 'Mains (Vegetarian)', image_url: 'images/menu_dal_bukhara.png' },
+    { id: 10, name: 'Morel Mushroom Pulav', price: 2200, description: 'Aromatic basmati rice steamed with wild Himalayan mushrooms.', category: 'Mains (Vegetarian)', image_url: 'images/menu_morel_pulav.png' },
+    { id: 11, name: 'Paneer Lababdar', price: 1900, description: 'Cottage cheese cubes in a rich, creamy tomato gravy.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc0?w=600' },
+    { id: 12, name: 'Malai Kofta', price: 1800, description: 'Cottage cheese dumplings in a velvety white gravy.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600' },
+    { id: 13, name: 'Dum Aloo Kashmiri', price: 1600, description: 'Baby potatoes in a vibrant, spiced yogurt gravy.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=600' },
+    { id: 14, name: 'Pindi Chole', price: 1500, description: 'Robust and spicy chickpeas cooked dry.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600' },
+    { id: 15, name: 'Bhindi Amchoor', price: 1400, description: 'Crispy fried okra with dried mango powder.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1510627489930-0c1b0ba0fa4a?w=600' },
+    { id: 16, name: 'Baingan Bharta', price: 1500, description: 'Smoked eggplant mashed with onions and tomatoes.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1579631542720-3a87824fff8a?w=600' },
+
     // Mains Non Veg
-    { id: 13, name: 'Classic Butter Chicken', price: 450, description: 'Tandoori-roasted chicken simmered in a velvet-smooth smoked tomato gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'images/menu_jhinga.png' },
-    { id: 14, name: 'Awadhi Lamb Biryani', price: 550, description: 'Premium basmati rice and tender lamb cooked slowly under a pastry seal.', category: 'Mains (Non-Vegetarian)', image_url: 'images/menu_jhinga.png' },
-    { id: 15, name: 'Goan Fish Curry', price: 480, description: 'Fresh Catch of the day simmered in a tangy coconut and red chili gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'images/menu_jhinga.png' },
-    { id: 16, name: 'Laal Maas', price: 520, description: 'A fiery, vibrant red mutton curry from Rajasthan.', category: 'Mains (Non-Vegetarian)', image_url: 'images/menu_jhinga.png' },
-    { id: 17, name: 'Murg Tikka Masala', price: 460, description: 'Charcoal grilled chicken tikka tossed in an onion-tomato masala base.', category: 'Mains (Non-Vegetarian)', image_url: 'images/menu_jhinga.png' },
-    
-    // Breads & Sides
-    { id: 18, name: 'Garlic Butter Naan', price: 100, description: 'Classic flatbread brushed liberally with garlic and organic cow ghee.', category: 'Breads & Sides', image_url: 'images/menu_murg_malai.png' },
-    { id: 19, name: 'Cheese Naan', price: 150, description: 'Tandoor-baked flatbread stuffed with vintage cheddar.', category: 'Breads & Sides', image_url: 'images/menu_murg_malai.png' },
-    { id: 20, name: 'Mint Paratha', price: 80, description: 'Whole wheat flaky bread brushed with dried mint leaves.', category: 'Breads & Sides', image_url: 'images/menu_murg_malai.png' },
-    { id: 21, name: 'Burrani Raita', price: 120, description: 'Thick chilled yogurt whisked with roasted garlic and cumin.', category: 'Breads & Sides', image_url: 'images/menu_murg_malai.png' },
-    
+    { id: 17, name: 'Saffron Lobster Malai Curry', price: 5500, description: 'Whole lobster poached in a delicate coconut milk gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600' },
+    { id: 18, name: 'Awadhi Lamb Biryani', price: 3800, description: 'Premium basmati rice and tender lamb with aromatic spices.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600' },
+    { id: 19, name: 'Nalli Nihari', price: 4200, description: 'Slow-cooked lamb shanks in a rich spice-infused marrow stew.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1544148103-077afdc1cf14?w=600' },
+    { id: 20, name: 'Classic Butter Chicken', price: 2800, description: 'Tandoori-roasted chicken in a velvet-smooth smoked tomato gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600' },
+    { id: 21, name: 'Laal Maas', price: 3400, description: 'A fiery, vibrant red mutton curry from Rajasthan.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1544148103-077afdc1cf14?w=600' },
+    { id: 22, name: 'Goan Fish Curry', price: 3100, description: 'Fresh Catch of the day in a tangy coconut gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600' },
+    { id: 23, name: 'Murg Tikka Masala', price: 2700, description: 'Charcoal grilled chicken tikka in an onion-tomato masala base.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600' },
+    { id: 24, name: 'Raan-E-Sikandari', price: 6800, description: 'Whole leg of lamb marinated and roasted for 12 hours.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1544148103-077afdc1cf14?w=600' },
+
+    // Breads
+    { id: 25, name: 'Truffle Cheese Naan', price: 800, description: 'Flatbread stuffed with vintage cheddar and finished with truffle oil.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc0?w=600' },
+    { id: 26, name: 'Garlic Butter Naan', price: 500, description: 'Classic flatbread brushed liberally with garlic and ghee.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1626200419109-383a54b3c4dc?w=600' },
+    { id: 27, name: 'Mint Paratha', price: 450, description: 'Whole wheat multi-layered flaky bread.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600' },
+    { id: 28, name: 'Burrani Raita', price: 400, description: 'Thick chilled yogurt whisked with roasted garlic.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600' },
+
     // Desserts
-    { id: 22, name: 'Pistachio Rasmalai', price: 250, description: 'Soft cheese discs immersed in thickened pistachio milk.', category: 'Desserts', image_url: 'images/menu_samosa.png' },
-    { id: 23, name: 'Gulab Jamun', price: 180, description: 'Warm reduced-milk dumplings soaked in a rose-infused sugar syrup.', category: 'Desserts', image_url: 'images/menu_samosa.png' },
-    { id: 24, name: 'Shahi Tukda', price: 200, description: 'Crisp fried bread soaked in saffron milk and topped with rich clotted cream.', category: 'Desserts', image_url: 'images/menu_samosa.png' },
+    { id: 29, name: '24K Pistachio Rasmalai', price: 1200, description: 'Soft cheese discs with 24-karat gold leaf.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
+    { id: 30, name: 'Rose Petal Gulab Jamun', price: 950, description: 'Warm dumplings soaked in a rose-infused sugar syrup.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
+    { id: 31, name: 'Shahi Tukda', price: 1100, description: 'Crisp fried bread soaked in saffron milk.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
+    { id: 32, name: 'Filter Coffee Ice Cream', price: 850, description: 'Artisanal ice cream with South Indian coffee.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
 
     // Beverages
-    { id: 25, name: 'Saffron Lassi', price: 150, description: 'A thick churned yogurt drink sweetened and infused with saffron.', category: 'Beverages', image_url: 'images/menu_lobster_shorba.png' },
-    { id: 26, name: 'Masala Chai', price: 80, description: 'A bespoke blend of Assam tea, brewed slowly with spices and milk.', category: 'Beverages', image_url: 'images/menu_lobster_shorba.png' },
-    { id: 27, name: 'Mango Mojito', price: 220, description: 'Fresh local Alphonso mango puree muddled with mint and sparkling water.', category: 'Beverages', image_url: 'images/menu_lobster_shorba.png' }
+    { id: 33, name: 'Saffron Cardamom Lassi', price: 600, description: 'A thick churned yogurt drink Sweetened and infused with premium saffron.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' },
+    { id: 34, name: 'Chai Royal', price: 500, description: 'A bespoke blend of Assam tea brewed slowly with spices.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1544787210-2213d84ad960?w=600' },
+    { id: 35, name: 'Mango Mint Mojito', price: 700, description: 'Fresh Alphonso mango puree muddled with mint.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' },
+    { id: 36, name: 'Jal Jeera', price: 500, description: 'A refreshing tangy mocktail with roasted cumin.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' }
 ];
 
 // --- Dynamic Rooms Fetch ---
