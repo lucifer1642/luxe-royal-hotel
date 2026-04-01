@@ -2,16 +2,8 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "/server.js"
-    },
-    {
-      "source": "/admin",
-      "destination": "/public/admin.html"
-    },
-    {
       "source": "/(.*)",
-      "destination": "/public/$1"
+      "destination": "/server.js"
     }
   ],
   "headers": [
