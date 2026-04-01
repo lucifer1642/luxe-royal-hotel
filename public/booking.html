@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Entry | Luxe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .booking-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px;
+            background-color: white;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .form-control, .form-select {
+            border-radius: 0;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            padding-left: 0;
+            background-color: transparent;
+        }
+        .form-control:focus, .form-select:focus {
+            box-shadow: none;
+            border-bottom-color: var(--accent-color);
+            background-color: transparent;
+        }
+        .step-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), url('https://images.unsplash.com/photo-1542314831-c6a420325141?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-logo fs-3" href="index.html">Luxe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms & Suites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Form -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="booking-card">
+                    <h2 class="brand-logo step-title text-center">Complete Your Reservation</h2>
+                    <p class="text-center text-muted mb-5">Please provide your details to secure your luxurious getaway.</p>
+                    
+                    <form id="booking-form">
+                        <!-- Step 1: Personal Details -->
+                        <h4 class="brand-logo mb-4 fs-5" style="color:var(--accent-color);">1. Guest Information</h4>
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">First Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Last Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Email Address</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Payment Mock -->
+                        <h4 class="brand-logo mb-4 fs-5" style="color:var(--accent-color);">2. Payment Details (Mock)</h4>
+                        <div class="row g-4 mb-5">
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Cardholder Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small text-uppercase fw-bold">Card Number</label>
+                                <input type="text" class="form-control" placeholder="**** **** **** ****">
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-primary-custom btn-lg px-5">Confirm Reservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

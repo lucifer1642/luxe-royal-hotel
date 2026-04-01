@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe | Hotel & Resort</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="z-index: 1000; background: rgba(10,25,47,0.1) !important;">
+        <div class="container">
+            <a class="navbar-brand brand-logo fs-3" href="index.html" style="color:var(--accent-color);">Luxe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms & Suites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative" style="overflow: hidden;">
+        <video autoplay muted loop playsinline class="video-bg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -2;">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-pool-in-a-forest-4115-large.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(10,25,47,0.5); z-index: -1;"></div>
+        <div class="container position-relative z-1">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-3 brand-logo" style="color:var(--accent-color);">Experience True Luxury</h1>
+                    <p class="lead mb-4 text-white">A sanctuary of elegance and unmatched service</p>
+                    <a href="rooms.html" class="btn btn-primary-custom btn-lg mb-5">Book Your Stay</a>
+                    
+                    <!-- Feature Review Card -->
+                    <div class="mt-4 mx-auto" style="max-width: 500px;">
+                        <div class="card bg-dark text-white border-0" style="background: rgba(10, 25, 47, 0.8) !important; backdrop-filter: blur(10px); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                            <div class="card-body p-4 position-relative">
+                                <span class="position-absolute top-0 start-0 ms-3 mt-2" style="font-size: 3rem; color: rgba(212, 175, 55, 0.3); font-family: serif;">"</span>
+                                <p id="hero-review-text" class="card-text fst-italic mb-3 position-relative z-1" style="font-size: 1.1rem;">An unforgettable stay. The attention to detail and impeccable service redefined luxury for us.</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="text-warning me-2">
+                                        ★ ★ ★ ★ ★
+                                    </div>
+                                    <strong id="hero-review-author" class="brand-logo" style="color:var(--accent-color); font-size: 0.9rem;">— Sarah Jenkins</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Rooms -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 brand-logo">Our Signature Suites</h2>
+            <div class="row g-4" id="featured-rooms">
+                <!-- Data will be loaded via JS, showing static fallback with INR -->
+                 <div class="col-md-4">
+                    <div class="card room-card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80" class="card-img-top" alt="Ocean View Suite" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title brand-logo">Ocean View Suite</h5>
+                            <p class="card-text text-muted small">Experience the ultimate luxury with panoramic views of the coast.</p>
+                            <p class="room-price" style="color:var(--accent-color); font-weight:bold;">₹8,500 <span class="fs-6 text-muted fw-normal">/ night</span></p>
+                            <a href="rooms.html" class="btn btn-outline-dark w-100 rounded-pill">Explore Suite</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card room-card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80" class="card-img-top" alt="Presidential Villa" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title brand-logo">Presidential Villa</h5>
+                            <p class="card-text text-muted small">Our most exclusive accommodation with private pool and butler service.</p>
+                            <p class="room-price" style="color:var(--accent-color); font-weight:bold;">₹18,000 <span class="fs-6 text-muted fw-normal">/ night</span></p>
+                            <a href="rooms.html" class="btn btn-outline-dark w-100 rounded-pill">Explore Villa</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4">
+                    <div class="card room-card h-100 border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80" class="card-img-top" alt="Deluxe Room" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title brand-logo">Deluxe Royal Room</h5>
+                            <p class="card-text text-muted small">Elegant and comfortable, perfect for a short prestigious getaway.</p>
+                            <p class="room-price" style="color:var(--accent-color); font-weight:bold;">₹5,500 <span class="fs-6 text-muted fw-normal">/ night</span></p>
+                            <a href="rooms.html" class="btn btn-outline-dark w-100 rounded-pill">Explore Room</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-dark pt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase brand-logo" style="color:var(--accent-color)">Luxe Royal Resort</h5>
+                    <p class="text-muted">Experience the epitome of luxury and bespoke service at Luxe. Book your stay with us today.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-white">Guest Services</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="rooms.html" class="text-muted text-decoration-none">Suites & Villas</a></li>
+                        <li><a href="menu.html" class="text-muted text-decoration-none">Culinary Art</a></li>
+                        <li><a href="login.html" class="text-muted text-decoration-none">Guest Login</a></li>
+                    </ul>
+                </div>
+                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase text-white">Reach Us</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-muted text-decoration-none">concierge@luxeroyal.in</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">+91 11 2345 6789</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5); color:white;">
+            © 2026 Luxe Royal Hotel & Resort
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
