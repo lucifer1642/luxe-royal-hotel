@@ -119,6 +119,50 @@ app.post('/api/orders', authenticateToken, async (req, res) => {
     }
 });
 
+// ---- ADMIN API ----
+
+// Fetch all bookings for Admin
+app.get('/api/admin/bookings', async (req, res) => {
+    try {
+        const result = await db.query(`
+            SELECT b.id, u.name as guest, r.room_type as room, b.total_price as price, b.status 
+            FROM bookings b 
+            JOIN users u ON b.user_id = u.id 
+            JOIN rooms r ON b.room_id = r.id 
+            ORDER BY b.created_at DESC
+        `);
+        res.json(result.rows);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch admin bookings' });
+    }
+});
+
+// Update booking status
+app.patch('/api/admin/bookings/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { status } = req.body;
+        await db.query('UPDATE bookings SET status = $1 WHERE id = $2', [status, id]);
+        res.json({ message: 'Status updated successfully' });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to update status' });
+    }
+});
+
+// Get Admin Dashboard Stats
+app.get('/api/admin/stats', async (req, res) => {
+    try {
+        const revResult = await db.query('SELECT SUM(total_price) as total FROM bookings WHERE status != $1', ['cancelled']);
+        const countResult = await db.query('SELECT COUNT(*) as active FROM bookings WHERE status != $1', ['checked-out']);
+        res.json({
+            revenue: parseFloat(revResult.rows[0].total || 0),
+            activeBookings: parseInt(countResult.rows[0].active || 0)
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch stats' });
+    }
+});
+
 // Start the server if running locally
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
     app.listen(PORT, () => {
