@@ -61,37 +61,37 @@ const mockMenu = [
     { id: 11, name: 'Paneer Lababdar', price: 1900, description: 'Cottage cheese cubes in a rich, creamy tomato gravy.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc0?w=600' },
     { id: 12, name: 'Malai Kofta', price: 1800, description: 'Cottage cheese dumplings in a velvety white gravy.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600' },
     { id: 13, name: 'Dum Aloo Kashmiri', price: 1600, description: 'Baby potatoes in a vibrant, spiced yogurt gravy.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=600' },
-    { id: 14, name: 'Pindi Chole', price: 1500, description: 'Robust and spicy chickpeas cooked dry.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600' },
+    { id: 14, name: 'Pindi Chole', price: 1500, description: 'Robust and spicy chickpeas cooked dry.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1596797038530-2c39bb05fbc5?w=600' },
     { id: 15, name: 'Bhindi Amchoor', price: 1400, description: 'Crispy fried okra with dried mango powder.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1510627489930-0c1b0ba0fa4a?w=600' },
     { id: 16, name: 'Baingan Bharta', price: 1500, description: 'Smoked eggplant mashed with onions and tomatoes.', category: 'Mains (Vegetarian)', image_url: 'https://images.unsplash.com/photo-1579631542720-3a87824fff8a?w=600' },
 
     // Mains Non Veg
     { id: 17, name: 'Saffron Lobster Malai Curry', price: 5500, description: 'Whole lobster poached in a delicate coconut milk gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600' },
-    { id: 18, name: 'Awadhi Lamb Biryani', price: 3800, description: 'Premium basmati rice and tender lamb with aromatic spices.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600' },
+    { id: 18, name: 'Awadhi Lamb Biryani', price: 3800, description: 'Premium basmati rice and tender lamb with aromatic spices.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=600' },
     { id: 19, name: 'Nalli Nihari', price: 4200, description: 'Slow-cooked lamb shanks in a rich spice-infused marrow stew.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1544148103-077afdc1cf14?w=600' },
     { id: 20, name: 'Classic Butter Chicken', price: 2800, description: 'Tandoori-roasted chicken in a velvet-smooth smoked tomato gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600' },
-    { id: 21, name: 'Laal Maas', price: 3400, description: 'A fiery, vibrant red mutton curry from Rajasthan.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1544148103-077afdc1cf14?w=600' },
-    { id: 22, name: 'Goan Fish Curry', price: 3100, description: 'Fresh Catch of the day in a tangy coconut gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600' },
-    { id: 23, name: 'Murg Tikka Masala', price: 2700, description: 'Charcoal grilled chicken tikka in an onion-tomato masala base.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600' },
-    { id: 24, name: 'Raan-E-Sikandari', price: 6800, description: 'Whole leg of lamb marinated and roasted for 12 hours.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1544148103-077afdc1cf14?w=600' },
+    { id: 21, name: 'Laal Maas', price: 3400, description: 'A fiery, vibrant red mutton curry from Rajasthan utilizing Mathania chilies.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1588166524941-3bf61a7c21df?w=600' },
+    { id: 22, name: 'Goan Fish Curry', price: 3100, description: 'Fresh Catch of the day in a tangy coconut gravy.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1645177623570-525d886dd943?w=600' },
+    { id: 23, name: 'Murg Tikka Masala', price: 2700, description: 'Charcoal grilled chicken tikka in an onion-tomato masala base.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?w=600' },
+    { id: 24, name: 'Raan-E-Sikandari', price: 6800, description: 'Whole leg of lamb marinated and roasted for 12 hours.', category: 'Mains (Non-Vegetarian)', image_url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600' },
 
     // Breads
     { id: 25, name: 'Truffle Cheese Naan', price: 800, description: 'Flatbread stuffed with vintage cheddar and finished with truffle oil.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc0?w=600' },
-    { id: 26, name: 'Garlic Butter Naan', price: 500, description: 'Classic flatbread brushed liberally with garlic and ghee.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1626200419109-383a54b3c4dc?w=600' },
-    { id: 27, name: 'Mint Paratha', price: 450, description: 'Whole wheat multi-layered flaky bread.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600' },
-    { id: 28, name: 'Burrani Raita', price: 400, description: 'Thick chilled yogurt whisked with roasted garlic.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600' },
+    { id: 26, name: 'Garlic Butter Naan', price: 500, description: 'Classic flatbread brushed liberally with garlic and ghee.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600' },
+    { id: 27, name: 'Mint Paratha', price: 450, description: 'Whole wheat multi-layered flaky bread brushed with dried mint.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=600' },
+    { id: 28, name: 'Burrani Raita', price: 400, description: 'Thick chilled yogurt whisked with roasted garlic and cumin.', category: 'Breads & Sides', image_url: 'https://images.unsplash.com/photo-1626200419109-383a54b3c4dc?w=600' },
 
     // Desserts
-    { id: 29, name: '24K Pistachio Rasmalai', price: 1200, description: 'Soft cheese discs with 24-karat gold leaf.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
-    { id: 30, name: 'Rose Petal Gulab Jamun', price: 950, description: 'Warm dumplings soaked in a rose-infused sugar syrup.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
-    { id: 31, name: 'Shahi Tukda', price: 1100, description: 'Crisp fried bread soaked in saffron milk.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
-    { id: 32, name: 'Filter Coffee Ice Cream', price: 850, description: 'Artisanal ice cream with South Indian coffee.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
+    { id: 29, name: '24K Pistachio Rasmalai', price: 1200, description: 'Soft cheese discs immersed in thickened pistachio milk, adorned with 24K gold.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1528750800168-f9f3f7ca2ec4?w=600' },
+    { id: 30, name: 'Rose Petal Gulab Jamun', price: 950, description: 'Warm reduced-milk dumplings soaked in a rose-infused sugar syrup.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1589301760014-d929f3979adc?w=600' },
+    { id: 31, name: 'Shahi Tukda', price: 1100, description: 'Crisp fried bread soaked in saffron milk and topped with rich clotted cream.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600' },
+    { id: 32, name: 'Filter Coffee Ice Cream', price: 850, description: 'Artisanal ice cream infused with rich South Indian filter coffee.', category: 'Desserts', image_url: 'https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?w=600' },
 
     // Beverages
-    { id: 33, name: 'Saffron Cardamom Lassi', price: 600, description: 'A thick churned yogurt drink Sweetened and infused with premium saffron.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' },
-    { id: 34, name: 'Chai Royal', price: 500, description: 'A bespoke blend of Assam tea brewed slowly with spices.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1544787210-2213d84ad960?w=600' },
-    { id: 35, name: 'Mango Mint Mojito', price: 700, description: 'Fresh Alphonso mango puree muddled with mint.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' },
-    { id: 36, name: 'Jal Jeera', price: 500, description: 'A refreshing tangy mocktail with roasted cumin.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' }
+    { id: 33, name: 'Saffron Cardamom Lassi', price: 600, description: 'A thick churned yogurt drink sweetened and infused with premium saffron.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' },
+    { id: 34, name: 'Chai Royal', price: 500, description: 'A bespoke blend of Assam tea brewed slowly with spices and milk.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1544787210-2213d84ad960?w=600' },
+    { id: 35, name: 'Mango Mint Mojito', price: 700, description: 'Fresh local Alphonso mango puree muddled with mint and soda.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' },
+    { id: 36, name: 'Jal Jeera', price: 500, description: 'A refreshing tangy mocktail with roasted cumin and tamarind.', category: 'Beverages', image_url: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600' }
 ];
 
 // --- Dynamic Rooms Fetch ---
