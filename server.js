@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const db = require('./db');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const app = express();
@@ -58,15 +58,16 @@ app.post('/api/auth/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         
         await db.query(
-            'INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3)',
-            [name, email, hashedPassword]
+            'INSERT INTO users (name, email, password_hash, role) VALUES ($1, $2, $3, $4)',
+            [name, email, hashedPassword, 'user']
         );
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
+        console.error("Registration Error:", error);
         if (error.code === '23505') {
             return res.status(400).json({ error: 'Email already exists' });
         }
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Internal server error: ' + error.message });
     }
 });
 
@@ -76,20 +77,21 @@ app.post('/api/auth/login', async (req, res) => {
         const result = await db.query('SELECT * FROM users WHERE email = $1', [email]);
         
         if (result.rows.length === 0) {
-            return res.status(400).json({ error: 'Invalid credentials' });
+            return res.status(400).json({ error: 'Invalid credentials (User not found)' });
         }
 
         const user = result.rows[0];
         const match = await bcrypt.compare(password, user.password_hash);
         
         if (!match) {
-            return res.status(400).json({ error: 'Invalid credentials' });
+            return res.status(400).json({ error: 'Invalid credentials (Password mismatch)' });
         }
 
         const token = jwt.sign({ id: user.id, role: user.role, name: user.name }, JWT_SECRET, { expiresIn: '24h' });
         res.json({ token, user: { id: user.id, name: user.name, role: user.role } });
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        console.error("Login Error:", error);
+        res.status(500).json({ error: 'Internal server error: ' + error.message });
     }
 });
 

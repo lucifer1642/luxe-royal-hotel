@@ -123,11 +123,12 @@ async function createTables() {
     await db.query(seedMenu);
 
     // Seed Root Admin
-    const adminPass = await require('bcrypt').hash('royal2024', 10);
+    const bcryptjs = require('bcryptjs');
+    const adminPass = await bcryptjs.hash('royal2024', 10);
     await db.query(`
         INSERT INTO users (name, email, password_hash, role) 
         VALUES ($1, $2, $3, $4) 
-        ON CONFLICT (email) DO NOTHING
+        ON CONFLICT (email) DO UPDATE SET role = 'admin', password_hash = $3
     `, ['The Royal Admin', 'admin@luxeroyal.com', adminPass, 'admin']);
     
     console.log('Database Indian Overhaul completed.');
