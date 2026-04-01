@@ -121,6 +121,14 @@ async function createTables() {
     console.log('Seeding initial Indian Data...');
     await db.query(seedRooms);
     await db.query(seedMenu);
+
+    // Seed Root Admin
+    const adminPass = await require('bcrypt').hash('royal2024', 10);
+    await db.query(`
+        INSERT INTO users (name, email, password_hash, role) 
+        VALUES ($1, $2, $3, $4) 
+        ON CONFLICT (email) DO NOTHING
+    `, ['The Royal Admin', 'admin@luxeroyal.com', adminPass, 'admin']);
     
     console.log('Database Indian Overhaul completed.');
   } catch (error) {

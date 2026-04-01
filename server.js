@@ -34,6 +34,22 @@ const authenticateToken = (req, res, next) => {
     });
 };
 
+// Middleware to verify ADMIN ONLY
+const authenticateAdmin = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) return res.sendStatus(401);
+
+    jwt.verify(token, JWT_SECRET, (err, user) => {
+        if (err || user.role !== 'admin') {
+            return res.status(403).json({ error: 'Royal Admin Access Only' });
+        }
+        req.user = user;
+        next();
+    });
+};
+
 // ---- AUTHENTICATION API ----
 
 app.post('/api/auth/register', async (req, res) => {
@@ -124,10 +140,10 @@ app.post('/api/orders', authenticateToken, async (req, res) => {
     }
 });
 
-// ---- ADMIN API ----
+// ---- ADMIN API (PROTECTED) ----
 
 // Fetch all bookings for Admin
-app.get('/api/admin/bookings', async (req, res) => {
+app.get('/api/admin/bookings', authenticateAdmin, async (req, res) => {
     try {
         const result = await db.query(`
             SELECT b.id, u.name as guest, r.room_type as room, b.total_price as price, b.status 
@@ -143,7 +159,7 @@ app.get('/api/admin/bookings', async (req, res) => {
 });
 
 // Update booking status
-app.patch('/api/admin/bookings/:id', async (req, res) => {
+app.patch('/api/admin/bookings/:id', authenticateAdmin, async (req, res) => {
     try {
         const { id } = req.params;
         const { status } = req.body;
@@ -155,7 +171,7 @@ app.patch('/api/admin/bookings/:id', async (req, res) => {
 });
 
 // Get Admin Dashboard Stats
-app.get('/api/admin/stats', async (req, res) => {
+app.get('/api/admin/stats', authenticateAdmin, async (req, res) => {
     try {
         const revResult = await db.query('SELECT SUM(total_price) as total FROM bookings WHERE status != $1', ['cancelled']);
         const countResult = await db.query('SELECT COUNT(*) as active FROM bookings WHERE status != $1', ['checked-out']);

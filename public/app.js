@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
                 
-                if (data.user.role === 'admin') window.location.href = 'admin.html';
+                if (data.user.role === 'admin') window.location.href = '/admin';
                 else window.location.href = 'index.html';
             } catch (err) { alert('Network error'); }
         });

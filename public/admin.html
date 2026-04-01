@@ -137,13 +137,26 @@
             render();
         }
 
-        // --- FETCH REAL DATA FROM DB ---
+        // --- AUTHENTICATION & FETCH REAL DATA ---
         async function fetchAdminData() {
+            const token = localStorage.getItem('token');
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!token || !user || user.role !== 'admin') {
+                window.location.href = '/login.html?msg=unauthorized';
+                return;
+            }
+
             try {
                 const [bRes, sRes] = await Promise.all([
-                    fetch('/api/admin/bookings'),
-                    fetch('/api/admin/stats')
+                    fetch('/api/admin/bookings', { headers: { 'Authorization': `Bearer ${token}` } }),
+                    fetch('/api/admin/stats', { headers: { 'Authorization': `Bearer ${token}` } })
                 ]);
+                
+                if (bRes.status === 401 || bRes.status === 403) {
+                    window.location.href = '/login.html';
+                    return;
+                }
                 
                 if (bRes.ok) state.bookings = await bRes.json();
                 if (sRes.ok) {
@@ -163,15 +176,20 @@
             if (!b) return;
             
             let nextStatus = '';
-            if (b.status === 'confirmed') nextStatus = 'awaiting-check-in';
-            else if (b.status === 'awaiting-check-in') nextStatus = 'checked-in';
-            else if (b.status === 'checked-in') nextStatus = 'checked-out';
+            let s = b.status.toLowerCase();
+            if (s === 'confirmed') nextStatus = 'awaiting-check-in';
+            else if (s === 'awaiting-check-in') nextStatus = 'checked-in';
+            else if (s === 'checked-in') nextStatus = 'checked-out';
             else return;
 
             try {
+                const token = localStorage.getItem('token');
                 const res = await fetch(`/api/admin/bookings/${id}`, {
                     method: 'PATCH',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}` 
+                    },
                     body: JSON.stringify({ status: nextStatus })
                 });
                 if (res.ok) fetchAdminData();
