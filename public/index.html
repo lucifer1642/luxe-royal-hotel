@@ -3,103 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe | Hotel & Resort</title>
+    <title>Spicy Hunt | Royal Indian Gastronomy</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="z-index: 1000; background: rgba(10,25,47,0.1) !important;">
+    <!-- Navbar - RESTAURANT ONLY -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100" style="z-index: 1000;">
         <div class="container">
-            <a class="navbar-brand brand-logo fs-3" href="index.html" style="color:var(--accent-color);">Luxe</a>
+            <a class="navbar-brand brand-logo fs-3" href="index.html" style="color:var(--accent-color);">SPIĆY HUNT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms & Suites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="menu.html">Dining</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">The Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">The Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html" id="nav-book">Reservations</a></li>
+                    <li class="nav-item ms-lg-3" id="auth-nav-item">
+                        <a class="btn btn-outline-warning rounded-pill px-4 btn-sm" href="login.html">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section position-relative" style="overflow: hidden;">
-        <video autoplay muted loop playsinline class="video-bg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -2;">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-pool-in-a-forest-4115-large.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay" style="position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(10,25,47,0.5); z-index: -1;"></div>
-        <div class="container position-relative z-1">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-8 text-center">
-                    <h1 class="display-3 brand-logo" style="color:var(--accent-color);">Experience True Luxury</h1>
-                    <p class="lead mb-4 text-white">A sanctuary of elegance and unmatched service</p>
-                    <a href="rooms.html" class="btn btn-primary-custom btn-lg mb-5">Book Your Stay</a>
-                    
-                    <!-- Feature Review Card -->
-                    <div class="mt-4 mx-auto" style="max-width: 500px;">
-                        <div class="card bg-dark text-white border-0" style="background: rgba(10, 25, 47, 0.8) !important; backdrop-filter: blur(10px); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                            <div class="card-body p-4 position-relative">
-                                <span class="position-absolute top-0 start-0 ms-3 mt-2" style="font-size: 3rem; color: rgba(212, 175, 55, 0.3); font-family: serif;">"</span>
-                                <p id="hero-review-text" class="card-text fst-italic mb-3 position-relative z-1" style="font-size: 1.1rem;">An unforgettable stay. The attention to detail and impeccable service redefined luxury for us.</p>
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <div class="text-warning me-2">
-                                        ★ ★ ★ ★ ★
-                                    </div>
-                                    <strong id="hero-review-author" class="brand-logo" style="color:var(--accent-color); font-size: 0.9rem;">— Sarah Jenkins</strong>
-                                </div>
-                            </div>
+    <!-- Professional Hero Carousel -->
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="6000">
+                <img src="spiced_interior_hero_1_1775318417656.png" class="d-block w-100" alt="Royal Dining Interior">
+                <div class="carousel-caption">
+                    <h1 class="brand-logo hero-title text-white">SPIĆY HUNT</h1>
+                    <p class="hero-subtitle text-white">Where Royal Heritage Meets Ancient Spiced Arts</p>
+                    <a href="#" onclick="handleBeginJourney(event)" class="btn btn-primary-custom rounded-pill mt-4">Begin the Journey</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <img src="royal_spices_close_up_2_1775318441733.png" class="d-block w-100" alt="Exotic Spices">
+                <div class="carousel-caption">
+                    <h1 class="brand-logo hero-title text-white">AUTHENTICITY</h1>
+                    <p class="hero-subtitle text-white">A Curated Hunt for the Soul of Spice</p>
+                    <a href="menu.html" class="btn btn-primary-custom rounded-pill mt-4">Explore the Menu</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- Our Story Section - Refined for Culinary Excellence -->
+    <section class="py-5 bg-white reveal">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded-5 shadow-lg" alt="The Culinary Hunt">
+                        <div class="position-absolute bottom-0 end-0 p-4 bg-crimson-gradient text-white rounded-5 m-4 shadow-lg d-none d-lg-block">
+                            <h4 class="brand-logo fs-5 mb-0">Since 1924</h4>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <h6 class="text-uppercase text-muted fw-bold mb-3" style="letter-spacing: 3px;">Our Royal Legacy</h6>
+                    <h2 class="display-5 brand-logo mb-4">A Relentless Hunt for Flavor</h2>
+                    <p class="lead text-muted mb-4">Founded on the principle of the "Hunt"—a decade-long search across the subcontinent for the rarest spices and most authentic recipes of the Rajputana and Awadhi royalty.</p>
+                    <p class="text-muted">At Spicy Hunt, we don't just cook—we archive history. Every dish served is a masterpiece of precision, using Mathania chillies, pure wild saffron, and techniques preserved for generations. We are not just a restaurant; we are the guardians of Indian culinary legacy.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Rooms -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 brand-logo">Our Signature Suites</h2>
-            <div class="row g-4" id="featured-rooms">
-                <!-- Data will be loaded via JS, showing static fallback with INR -->
-                 <div class="col-md-4">
-                    <div class="card room-card h-100 border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80" class="card-img-top" alt="Ocean View Suite" style="height:250px; object-fit:cover;">
-                        <div class="card-body">
-                            <h5 class="card-title brand-logo">Ocean View Suite</h5>
-                            <p class="card-text text-muted small">Experience the ultimate luxury with panoramic views of the coast.</p>
-                            <p class="room-price" style="color:var(--accent-color); font-weight:bold;">₹8,500 <span class="fs-6 text-muted fw-normal">/ night</span></p>
-                            <a href="rooms.html" class="btn btn-outline-dark w-100 rounded-pill">Explore Suite</a>
+    <!-- Professional Signature Dishes -->
+    <section class="py-5 bg-light reveal">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-muted fw-bold mb-2" style="letter-spacing: 4px;">Exclusive Selections</h6>
+                <h2 class="display-4 brand-logo">Signature Masterpieces</h2>
+            </div>
+            <div class="row g-5" id="featured-dishes">
+                <div class="col-md-4">
+                    <div class="dish-card-perfect">
+                        <div class="dish-img-container">
+                            <span class="glass-badge">Royal Favorite</span>
+                            <img src="rajasthani_laal_maas_signature_1775318214346.png" class="dish-img" alt="Laal Maas">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h4 class="brand-logo mb-2">Rajasthani Laal Maas</h4>
+                            <p class="text-muted small mb-4">A fiery masterpiece simmered to perfection in copper pots over slow charcoal fires.</p>
+                            <p class="price-tag mb-4">₹3,400</p>
+                            <a href="menu.html" class="btn btn-outline-dark rounded-pill px-5">View Detail</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card room-card h-100 border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80" class="card-img-top" alt="Presidential Villa" style="height:250px; object-fit:cover;">
-                        <div class="card-body">
-                            <h5 class="card-title brand-logo">Presidential Villa</h5>
-                            <p class="card-text text-muted small">Our most exclusive accommodation with private pool and butler service.</p>
-                            <p class="room-price" style="color:var(--accent-color); font-weight:bold;">₹18,000 <span class="fs-6 text-muted fw-normal">/ night</span></p>
-                            <a href="rooms.html" class="btn btn-outline-dark w-100 rounded-pill">Explore Villa</a>
+                    <div class="dish-card-perfect">
+                        <div class="dish-img-container">
+                            <span class="glass-badge">Chef's Choice</span>
+                            <img src="awadhi_biryani_signature_1775318352835.png" class="dish-img" alt="Awadhi Biryani">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h4 class="brand-logo mb-2">Awadhi Lamb Biryani</h4>
+                            <p class="text-muted small mb-4">The crown jewel of Lucknow. Aromatic basmati rice and fall-off-the-bone tender lamb.</p>
+                            <p class="price-tag mb-4">₹3,800</p>
+                            <a href="menu.html" class="btn btn-outline-dark rounded-pill px-5">View Detail</a>
                         </div>
                     </div>
                 </div>
-                 <div class="col-md-4">
-                    <div class="card room-card h-100 border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80" class="card-img-top" alt="Deluxe Room" style="height:250px; object-fit:cover;">
-                        <div class="card-body">
-                            <h5 class="card-title brand-logo">Deluxe Royal Room</h5>
-                            <p class="card-text text-muted small">Elegant and comfortable, perfect for a short prestigious getaway.</p>
-                            <p class="room-price" style="color:var(--accent-color); font-weight:bold;">₹5,500 <span class="fs-6 text-muted fw-normal">/ night</span></p>
-                            <a href="rooms.html" class="btn btn-outline-dark w-100 rounded-pill">Explore Room</a>
+                <div class="col-md-4">
+                    <div class="dish-card-perfect">
+                        <div class="dish-img-container">
+                            <span class="glass-badge">Ultra Premium</span>
+                            <img src="gold_leaf_butter_chicken_signature_1775318389450.png" class="dish-img" alt="Gold Butter Chicken">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h4 class="brand-logo mb-2">Gold-Leaf Butter Chicken</h4>
+                            <p class="text-muted small mb-4">Velvety smoked tomato gravy crowned with authentic pure 24K gold leaf.</p>
+                            <p class="price-tag mb-4">₹2,800</p>
+                            <a href="menu.html" class="btn btn-outline-dark rounded-pill px-5">View Detail</a>
                         </div>
                     </div>
                 </div>
@@ -107,38 +137,76 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-dark pt-5">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase brand-logo" style="color:var(--accent-color)">Luxe Royal Resort</h5>
-                    <p class="text-muted">Experience the epitome of luxury and bespoke service at Luxe. Book your stay with us today.</p>
+    <!-- Professional Testimonials -->
+    <section class="py-5 bg-white reveal">
+        <div class="container py-5 text-center">
+            <h2 class="mb-5 brand-logo display-5">The Connoisseur's Verdict</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="review-card h-100">
+                        <div class="text-warning mb-3">★★★★★</div>
+                        <p class="fs-5 fst-italic mb-4 text-secondary">"A standard-bearer for Indian fine dining. The attention to spice profiles is academic, yet the results are soulful and transportive."</p>
+                        <h6 class="brand-logo small">— MR. V. SINGHANIA</h6>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase text-white">Guest Services</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li><a href="rooms.html" class="text-muted text-decoration-none">Suites & Villas</a></li>
-                        <li><a href="menu.html" class="text-muted text-decoration-none">Culinary Art</a></li>
-                        <li><a href="login.html" class="text-muted text-decoration-none">Guest Login</a></li>
-                    </ul>
-                </div>
-                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase text-white">Reach Us</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li><a href="#" class="text-muted text-decoration-none">concierge@luxeroyal.in</a></li>
-                        <li><a href="#" class="text-muted text-decoration-none">+91 11 2345 6789</a></li>
-                    </ul>
+                <div class="col-md-5">
+                    <div class="review-card h-100">
+                        <div class="text-warning mb-3">★★★★★</div>
+                        <p class="fs-5 fst-italic mb-4 text-secondary">"Every visit to Spicy Hunt feels like a royal audience. The seamless journey from reservation to feast is unmatched."</p>
+                        <h6 class="brand-logo small">— DR. ELENA RUSSO</h6>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5); color:white;">
-            © 2026 Luxe Royal Hotel & Resort
+    </section>
+
+    <!-- Final Restaurant Footer -->
+    <footer class="text-center text-lg-start">
+        <div class="container text-center">
+            <h5 class="brand-logo footer-logo mb-4" style="color:var(--accent-color)">SPIĆY HUNT</h5>
+            <p class="text-muted small mb-4">CURATING THE SOUL OF INDIAN HERITAGE SINCE 1924</p>
+            <div class="mb-4">
+                <a href="index.html" class="text-muted mx-3 text-decoration-none">Home</a>
+                <a href="menu.html" class="text-muted mx-3 text-decoration-none">Menu</a>
+                <a href="booking.html" class="text-muted mx-3 text-decoration-none">Reserve</a>
+                <a href="tos.html" class="text-muted mx-3 text-decoration-none">Terms</a>
+            </div>
+            <div class="text-muted small border-top border-secondary pt-4">
+                © 2026 SPICY HUNT CULINARY GROUP | NEW DELHI
+            </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("visible");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", reveal);
+
+        // Simplified Flow: Begin Journey Logic
+        function handleBeginJourney(e) {
+            e.preventDefault();
+            const token = localStorage.getItem('token');
+            if (token) {
+                window.location.href = 'booking.html';
+            } else {
+                alert('Please login to begin your royal culinary journey.');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
     <script src="app.js"></script>
 </body>
 </html>

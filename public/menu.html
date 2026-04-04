@@ -3,196 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saffron Dining | Luxe Royal</title>
+    <title>Select Your Feast | Spicy Hunt</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .dining-header {
-            position: relative;
-            padding: 150px 0;
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
-        .video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            z-index: -2;
-        }
-        .video-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(10, 25, 47, 0.6);
-            z-index: -1;
-        }
-        .menu-category {
-            font-family: 'Playfair Display', serif;
-            color: var(--accent-color);
-            margin-top: 50px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .menu-card {
-            border: none;
-            background: transparent;
-            margin-bottom: 30px;
-        }
-        .menu-img-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            position: relative;
-            height: 250px;
-        }
-        .menu-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .menu-price-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(10, 25, 47, 0.9);
-            color: var(--accent-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .menu-item-name {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-        .menu-item-desc {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            min-height: 45px;
-        }
-        
-        .floating-cart {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-            cursor: pointer;
-            z-index: 1000;
-            transition: transform 0.3s;
-        }
-        .floating-cart:hover { transform: scale(1.1); }
-        .cart-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #e74c3c;
-            color: white;
-            font-size: 0.8rem;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .qty-btn {
-            background: none;
-            border: 1px solid var(--accent-color);
-            color: var(--primary-color);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand brand-logo fs-3" href="index.html">Luxe</a>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand brand-logo fs-3" href="index.html" style="color:var(--accent-color);">Spicy Hunt</a>
+            <div class="d-flex align-items-center">
+                <a href="checkout.html" class="nav-link position-relative me-3">
+                    🛒 <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem; display:none;">0</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms & Suites</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="menu.html" style="color:var(--accent-color)!important;">Dining</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">The Story</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="menu.html">The Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Reservations</a></li>
+                    <li class="nav-item ms-lg-3" id="auth-nav-item">
+                        <a class="btn btn-outline-warning rounded-pill px-4 btn-sm" href="login.html">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Floating Cart -->
-    <div class="floating-cart" onclick="window.location.href='checkout.html'">
-        🛒
-        <span class="cart-badge" id="cart-count">0</span>
-    </div>
-
-    <!-- Header with Cinematic Video -->
-    <div class="dining-header">
-        <video autoplay muted loop playsinline class="video-bg">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-frying-spices-in-a-pan-4302-large.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-        <div class="container position-relative z-1">
-            <h1 class="display-3 brand-logo" style="color:var(--accent-color);">ROYAL INDIAN CULINARY ART</h1>
-            <p class="lead">A symphony of rare spices, heritage recipes, and modern gastronomy.</p>
+    <!-- PERFECTED PROGRESS INDICATOR -->
+    <div class="container mt-5">
+        <div class="booking-progress">
+            <div class="progress-step">1. Table</div>
+            <div class="progress-line"></div>
+            <div class="progress-step active">2. Feast Selection</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">3. Royal Checkout</div>
         </div>
     </div>
 
-    <!-- Dynamic Menu Rendering -->
-    <section class="py-5 bg-white">
-        <div class="container" id="dynamic-menu-container">
-            <!-- Rendered by app.js -->
+    <!-- MAIN FEAST SECTION -->
+    <div class="container mb-5 py-5">
+        <div class="text-center mb-5 reveal visible" style="opacity: 1; transform: translateY(0);">
+            <h6 class="text-uppercase text-muted fw-bold mb-2" style="letter-spacing: 4px;">Exclusive Culinary Selection</h6>
+            <h2 class="display-4 brand-logo" style="color: var(--primary-color);">Our Royal Menu</h2>
+            <p class="text-muted mt-3 fs-5">Every dish a masterpiece, only the finest selections showcased.</p>
+        </div>
+
+        <div id="dynamic-menu-container">
+            <!-- Professional Structural Panels will be injected here by app.js -->
             <div class="text-center py-5">
-                <div class="spinner-border" style="color: var(--accent-color);" role="status"></div>
-                <p class="mt-3">Preparing majestic selections...</p>
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading Feasts...</span>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-dark pt-5">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5); color:white;">
-            © 2026 Luxe Royal Hotel & Resort
+        <div class="text-center mt-5 pt-5 border-top">
+            <h4 class="brand-logo mb-4">Done Selecting Your Feast?</h4>
+            <button onclick="handleCheckoutRedirection()" class="btn btn-primary-custom px-5 py-3">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Final Restaurant Footer -->
+    <footer class="text-center text-lg-start mt-5">
+        <div class="container text-center">
+            <h5 class="brand-logo fs-4 mb-3" style="color:var(--accent-color)">SPIĆY HUNT</h5>
+            <p class="text-muted small">CURATING THE SOUL OF INDIAN HERITAGE SINCE 1924</p>
+            <div class="mb-4">
+                <a href="index.html" class="text-muted mx-3 text-decoration-none small">The Story</a>
+                <a href="menu.html" class="text-muted mx-3 text-decoration-none small">The Menu</a>
+                <a href="booking.html" class="text-muted mx-3 text-decoration-none small">Reservations</a>
+            </div>
+            <p class="small text-muted border-top border-secondary pt-3">© 2026 SPICY HUNT CULINARY GROUP | NEW DELHI</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
